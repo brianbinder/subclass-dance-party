@@ -20,23 +20,25 @@ InteractiveDancer.prototype.step = function() {
   this.$node.css('border-color', 'rgb(' + color1 + ',' + color2 + ',' + color3 + ')');
 
   // go to the position where the dancerCounter index
-  debugger;
-  var currentDancerTop = window.dancers[this.dancerCounter].$node.css('top');
-  var currentDancerleft = window.dancers[this.dancerCounter].$node.css('left');
-  this.$node.css({
-    top: currentDancerTop,
-    left: currentDancerleft
-  });
-  this.dancerCounter++;
-  if (this.dancerCounter >= window.dancers.length) {
-    this.dancerCounter = 0;
+  // debugger;
+  if (window.nonInteractiveDancers[this.dancerCounter]) {
+    if (this.timeBetweenSteps < 400) {
+      this.timeBetweenSteps += 400;
+    }
+    var currentDancerTop = window.nonInteractiveDancers[this.dancerCounter].$node.css('top');
+    var currentDancerleft = window.nonInteractiveDancers[this.dancerCounter].$node.css('left');
+    this.$node.css({
+      top: currentDancerTop,
+      left: currentDancerleft
+    });
+    this.dancerCounter++;
+    if (this.dancerCounter >= window.nonInteractiveDancers.length) {
+      this.dancerCounter = 0;
+    }
   }
-  // add 1 to the dancerCOunter index
   // if the dancerCounter === length of the array then set
   // dancer counter to zero
-
 };
-
 InteractiveDancer.prototype.lineUp = function() {
   this.$node.css('left', '95%');
 };

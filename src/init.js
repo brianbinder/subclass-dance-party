@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.nonInteractiveDancers = [];
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -29,6 +30,9 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+    if (!dancer.$node.hasClass('interactive')) {
+      window.nonInteractiveDancers.push(dancer);
+    }
   });
 });
 

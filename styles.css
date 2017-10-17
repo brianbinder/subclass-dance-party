@@ -48,6 +48,11 @@ body, a:link, a:visited, a:active{
   border-radius: 25px;
 }
 
+.dancer.mouseOver{
+  border: 10px solid blue;
+  border-radius:10px;
+}
+
 div.dancer{
   border: 0;
   border-radius: 0;
