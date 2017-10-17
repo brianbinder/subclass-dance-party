@@ -23,6 +23,10 @@ MakeBlinkyDancer.prototype.step = function() {
   this.$node.toggle();
 };
 
+MakeBlinkyDancer.prototype.lineUp = function() {
+  this.$node.css('left', '5%');
+};
+
 // var dancePerson = MakeBlinkyDancer(43, 324, 1000);
 
 // dancePerson = {
