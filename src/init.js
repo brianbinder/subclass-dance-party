@@ -37,6 +37,10 @@ $(document).ready(function() {
       var id = $(this).attr('id');
       window.dancers[id].change();
     });
+    $('.dancer').on('mouseout', function(event) {
+      var id = $(this).attr('id');
+      window.dancers[id].unChange();
+    });
 
   });
 
