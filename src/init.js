@@ -33,6 +33,18 @@ $(document).ready(function() {
     if (!dancer.$node.hasClass('interactive')) {
       window.nonInteractiveDancers.push(dancer);
     }
+    $('.dancer').on('mouseover', function(event) {
+      var id = $(this).attr('id');
+      window.dancers[id].change();
+    });
+
   });
+
 });
+
+
+
+
+
+
 

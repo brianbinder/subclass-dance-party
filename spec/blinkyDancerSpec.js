@@ -32,3 +32,34 @@ describe('blinkyDancer', function() {
     });
   });
 });
+
+describe('colorfulDancer', function() {
+  var cDancer, currentColor, newColor;
+  beforeEach(function() {
+    cDancer = new MakeColorfulDancer(50, 50, 1000);
+    currentColor = cDancer.$node.css('border-color');
+    cDancer.step();
+    newColor = cDancer.$node.css('border-color');
+  });
+
+
+  it('should change colors from red to something else', function() {
+    expect(currentColor).to.not.equal(newColor);
+  });
+
+});
+
+
+describe('boxingDancer', function() {
+  var bDancer, originalAngle, finalAngle;
+  beforeEach(function() {
+    bDancer = new BoxingDancer(50, 50, 500);
+    originalAngle = bDancer.rotate;
+    bDancer.step();
+    finalAngle = bDancer.rotate;
+  });
+
+  it('should rotate after each step', function() {
+    expect(originalAngle).to.not.equal(finalAngle);
+  });
+});

@@ -1,6 +1,8 @@
 var MouseOverDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('mouseOver');
+  this._positionInDancers = window.dancers.length;
+  this.$node.attr('id', this._positionInDancers);
 };
 
 MouseOverDancer.prototype = Object.create(MakeDancer.prototype);
@@ -17,4 +19,13 @@ MouseOverDancer.prototype.step = function() {
 
 MouseOverDancer.prototype.lineUp = function() {
   this.$node.css('left', '95%');
+};
+
+MouseOverDancer.prototype.change = function() {
+  this.$node.css({
+    top: '+=10',
+    right: '+=10',
+    bottom: '+=10',
+    left: '+=10'
+  });
 };
