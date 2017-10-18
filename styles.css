@@ -60,3 +60,11 @@ div.dancer{
   border-radius: 0;
   /*overflow: hidden;*/
 }
+
+.dancer.marioStar{
+  border: none;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background-image: url("http://emojis.slackmojis.com/emojis/images/1490884209/1972/star.gif");
+}
